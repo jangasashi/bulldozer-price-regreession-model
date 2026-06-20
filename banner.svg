@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0d0d"/>
+      <stop offset="50%" style="stop-color:#1a1200"/>
+      <stop offset="100%" style="stop-color:#0d0a00"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F7971E"/>
+      <stop offset="100%" style="stop-color:#FFD200"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="300" fill="url(#bgGrad)"/>
+
+  <!-- Ground line -->
+  <rect x="0" y="240" width="1200" height="2" fill="#F7971E" opacity="0.2"/>
+  <rect x="0" y="242" width="1200" height="58" fill="#F7971E" opacity="0.04"/>
+
+  <!-- Bulldozer silhouette (left) -->
+  <g transform="translate(40, 60)" opacity="0.7">
+    <!-- Blade -->
+    <rect x="10" y="105" rx="3" width="55" height="35" fill="#F7971E" opacity="0.3" stroke="#F7971E" stroke-width="1"/>
+    <rect x="0" y="108" rx="2" width="15" height="28" fill="#FFD200" opacity="0.4"/>
+    <!-- Body -->
+    <rect x="60" y="80" rx="5" width="140" height="75" fill="#2a1f00" stroke="#F7971E" stroke-width="1.2"/>
+    <!-- Cab -->
+    <rect x="130" y="50" rx="5" width="75" height="55" fill="#1a1400" stroke="#F7971E" stroke-width="1"/>
+    <!-- Window -->
+    <rect x="140" y="58" rx="3" width="55" height="30" fill="#F7971E" opacity="0.15" stroke="#FFD200" stroke-width="0.7"/>
+    <!-- Exhaust -->
+    <rect x="195" y="35" rx="2" width="8" height="20" fill="#F7971E" opacity="0.5"/>
+    <!-- Tracks -->
+    <rect x="55" y="150" rx="8" width="160" height="25" fill="#1a1400" stroke="#F7971E" stroke-width="1.2"/>
+    <circle cx="80" cy="162" r="10" fill="#F7971E" opacity="0.3" stroke="#FFD200" stroke-width="1"/>
+    <circle cx="115" cy="162" r="10" fill="#F7971E" opacity="0.3" stroke="#FFD200" stroke-width="1"/>
+    <circle cx="150" cy="162" r="10" fill="#F7971E" opacity="0.3" stroke="#FFD200" stroke-width="1"/>
+    <circle cx="185" cy="162" r="10" fill="#F7971E" opacity="0.3" stroke="#FFD200" stroke-width="1"/>
+    <!-- Arm -->
+    <line x1="200" y1="80" x2="220" y2="50" stroke="#F7971E" stroke-width="3" stroke-linecap="round"/>
+    <rect x="215" y="38" rx="2" width="40" height="18" fill="#F7971E" opacity="0.3" stroke="#F7971E" stroke-width="1"/>
+  </g>
+
+  <!-- Price regression chart (right) -->
+  <g transform="translate(890, 55)">
+    <rect x="0" y="0" rx="8" width="270" height="185" fill="#1a1200" stroke="#F7971E" stroke-width="1" opacity="0.9"/>
+    <text x="135" y="25" text-anchor="middle" font-family="Arial" font-size="10" fill="#FFD200" opacity="0.8">PREDICTED vs ACTUAL PRICE</text>
+    <!-- Chart axes -->
+    <line x1="25" y1="155" x2="255" y2="155" stroke="#F7971E" stroke-width="1" opacity="0.3"/>
+    <line x1="25" y1="35" x2="25" y2="155" stroke="#F7971E" stroke-width="1" opacity="0.3"/>
+    <!-- Regression line -->
+    <line x1="30" y1="145" x2="250" y2="45" stroke="#FFD200" stroke-width="2" stroke-dasharray="6,3" opacity="0.8" filter="url(#glow)"/>
+    <!-- Scatter dots -->
+    <circle cx="50" cy="135" r="3" fill="#F7971E" opacity="0.7"/>
+    <circle cx="80" cy="120" r="3" fill="#F7971E" opacity="0.7"/>
+    <circle cx="110" cy="105" r="3" fill="#FFD200" opacity="0.7"/>
+    <circle cx="130" cy="98" r="3" fill="#F7971E" opacity="0.7"/>
+    <circle cx="155" cy="85" r="3" fill="#FFD200" opacity="0.8"/>
+    <circle cx="180" cy="72" r="3" fill="#F7971E" opacity="0.7"/>
+    <circle cx="200" cy="65" r="3" fill="#FFD200" opacity="0.9"/>
+    <circle cx="225" cy="58" r="3" fill="#F7971E" opacity="0.7"/>
+    <circle cx="245" cy="50" r="3" fill="#FFD200" opacity="0.7"/>
+    <!-- RMSLE badge -->
+    <rect x="170" y="120" rx="5" width="80" height="30" fill="#F7971E" opacity="0.15" stroke="#FFD200" stroke-width="1"/>
+    <text x="210" y="133" text-anchor="middle" font-family="Arial" font-size="9" fill="#FFD200">RMSLE</text>
+    <text x="210" y="145" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#FFD200">&lt; 0.25</text>
+  </g>
+
+  <!-- Main Text -->
+  <text x="560" y="95" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#F7971E" letter-spacing="5" opacity="0.85">KAGGLE · BLUEBOOK FOR BULLDOZERS</text>
+
+  <text x="560" y="148" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="900" fill="white" filter="url(#glow)">Bulldozer Price</text>
+  <text x="560" y="193" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="900" fill="url(#amberGrad)">Prediction Model</text>
+
+  <rect x="310" y="207" rx="2" width="495" height="2.5" fill="url(#amberGrad)" opacity="0.5"/>
+
+  <text x="560" y="232" text-anchor="middle" font-family="Arial" font-size="12" fill="white" opacity="0.45" letter-spacing="1">XGBoost · Scikit-Learn Pipelines · 400K+ Records · RandomizedSearchCV</text>
+
+  <text x="560" y="278" text-anchor="middle" font-family="Arial" font-size="11" fill="white" opacity="0.3">github.com/jangasashi · shashikrish.143@gmail.com</text>
+</svg>
